@@ -11,8 +11,10 @@ class CreateWalletsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     var controller = Get.put(WalletController());
     const sizedBox20 = SizedBox(height: 20.0);
-    return SafeArea(
-        child: Scaffold(
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Create a Wallet"),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -25,7 +27,7 @@ class CreateWalletsScreen extends StatelessWidget {
           ],
         ),
       ),
-    ));
+    );
   }
 
   Widget createWalletScreenWidget(WalletController controller) {

@@ -11,9 +11,10 @@ class OrderPayScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(child: Scaffold(
+    return Scaffold(
+      appBar: AppBar(),
       body: Padding(
-        padding: const EdgeInsets.only(left: 20,right: 20),
+        padding: const EdgeInsets.only(left: 20, right: 20),
         child: Stack(
           alignment: Alignment.topCenter,
           children: [
@@ -33,45 +34,76 @@ class OrderPayScreen extends StatelessWidget {
                           padding: const EdgeInsets.all(8.0),
                           child: Row(
                             children: [
-                              Text("THE MENU",style: AppStyles.appbarTitleText.copyWith(fontSize: 12),),
-                              const SizedBox(width: 10,),
-
-                            ],),
+                              Text(
+                                "THE MENU",
+                                style: AppStyles.appbarTitleText
+                                    .copyWith(fontSize: 12),
+                              ),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                            ],
+                          ),
                         ),
-                        const SizedBox( height: 10,),
+                        const SizedBox(
+                          height: 10,
+                        ),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Flexible(flex: 1,child:  Text("Qty",style: AppStyles.appbarTitleText.copyWith(fontSize: 12),),),
-                              Flexible(flex: 4,child: Text("Item ",style: AppStyles.appbarTitleText.copyWith(fontSize: 12),),),
+                              Flexible(
+                                flex: 1,
+                                child: Text(
+                                  "Qty",
+                                  style: AppStyles.appbarTitleText
+                                      .copyWith(fontSize: 12),
+                                ),
+                              ),
+                              Flexible(
+                                flex: 4,
+                                child: Text(
+                                  "Item ",
+                                  style: AppStyles.appbarTitleText
+                                      .copyWith(fontSize: 12),
+                                ),
+                              ),
                               const Spacer(),
-                              Flexible(flex: 2,child: Text("Price (\u20A6)",style: AppStyles.appbarTitleText.copyWith(fontSize: 12),),),
-                              const SizedBox(width: 10,),
-                            ],),
+                              Flexible(
+                                flex: 2,
+                                child: Text(
+                                  "Price (\u20A6)",
+                                  style: AppStyles.appbarTitleText
+                                      .copyWith(fontSize: 12),
+                                ),
+                              ),
+                              const SizedBox(width: 10),
+                            ],
+                          ),
                         ),
                         ListView.builder(
                             physics: const NeverScrollableScrollPhysics(),
                             shrinkWrap: true,
                             itemCount: 3,
-                            itemBuilder: (BuildContext context, int index){
-                              return MenuList(text: "ma", onPressed: (){
-                                Get.to(() => const MenuDetailsScreen());
-                              }) ;
+                            itemBuilder: (BuildContext context, int index) {
+                              return MenuList(
+                                  text: "ma",
+                                  onPressed: () {
+                                    Get.to(() => const MenuDetailsScreen());
+                                  });
                             }),
                       ]),
                     ),
-                    const  SizedBox( height: 10.0,),
+                    const SizedBox(height: 10.0),
                     Container(
-
-                      padding:const  EdgeInsets.all(20.0),
+                      padding: const EdgeInsets.all(20.0),
                       decoration: BoxDecoration(
                         color: Colors.black,
-                        borderRadius: BorderRadius.circular(10.0), // Adjust the radius as needed
+                        borderRadius: BorderRadius.circular(10.0),
                       ),
-                      child: Row(
+                      child: const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Expanded(
@@ -80,7 +112,7 @@ class OrderPayScreen extends StatelessWidget {
                               style: TextStyle(color: Colors.white),
                             ),
                           ),
-                          const Spacer(),
+                          Spacer(),
                           Expanded(
                             child: Text(
                               "\u20A6 10,000",
@@ -90,10 +122,13 @@ class OrderPayScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-
-                    const SizedBox(height: 10,),
-                    CustomButtons(text: "Pay",textColor: Colors.white,buttonColor: Colors.green, onBtnPressed: () {
-                    },)
+                    const SizedBox(height: 10),
+                    CustomButtons(
+                      text: "Pay",
+                      textColor: Colors.white,
+                      buttonColor: Colors.green,
+                      onBtnPressed: () {},
+                    )
                   ],
                 ),
               ),
@@ -102,19 +137,17 @@ class OrderPayScreen extends StatelessWidget {
                 top: 5,
                 right: 20,
                 left: 20,
-                child:ClipOval(
+                child: ClipOval(
                   child: Image.asset(
                     customerLogo,
                     width: 100, // Set the desired width
                     height: 100, // Set the desired height
                     // You can adjust the fit as needed
                   ),
-                )
-            ),
-
+                )),
           ],
         ),
       ),
-    ));
+    );
   }
 }

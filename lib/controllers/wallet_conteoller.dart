@@ -13,14 +13,14 @@ class WalletController extends GetxController {
 
       // Perform registration logic here
       // You can access the field values using _firstNameController.text, etc.
-     Get.to(() =>   CreateWalletsScreen());
+     Get.to(() =>   const CreateWalletsScreen());
   }
 
   createWallet() {
     if (createWalletKey.currentState!.validate()) {
       // Perform registration logic here
       // You can access the field values using _firstNameController.text, etc.
-      Get.to(() =>  CreateWalletsScreen());
+      Get.to(() =>  const CreateWalletsScreen());
     }
   }
 }

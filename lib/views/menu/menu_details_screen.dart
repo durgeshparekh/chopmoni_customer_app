@@ -10,8 +10,10 @@ class MenuDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: Scaffold(
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Menu Detail'),
+      ),
       body: Padding(
         padding: const EdgeInsets.only(top: 10, left: 20, right: 20),
         child: Column(children: [
@@ -203,6 +205,6 @@ class MenuDetailsScreen extends StatelessWidget {
               onBtnPressed: () {})
         ]),
       ),
-    ));
+    );
   }
 }
