@@ -1,5 +1,5 @@
 import 'package:chopmoni_customer_app/config/app_theme.dart';
-import 'package:chopmoni_customer_app/views/splash_screen/splash_screen.dart';
+import 'package:chopmoni_customer_app/views/dashboard/dashboard_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 
@@ -18,7 +18,7 @@ class ChopmoniApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       smartManagement: SmartManagement.full,
       useInheritedMediaQuery: true,
-      home: const SplashScreen(),
+      home: const DashboardScreen(),
     );
   }
 }

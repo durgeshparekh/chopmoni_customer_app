@@ -21,8 +21,11 @@ class CustomButtons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
+      minWidth: double.infinity,
       padding: EdgeInsets.symmetric(
-          horizontal: horizontalPadding ?? 50, vertical: verticalPadding ?? 20),
+        horizontal: horizontalPadding ?? 50,
+        vertical: verticalPadding ?? 20,
+      ),
       color: buttonColor,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15),

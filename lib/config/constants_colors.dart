@@ -9,3 +9,5 @@ const buttonColor = Color(0xFF232527);
 const lightGreenShade = Color(0xFFCCFCCC);
 const pendingOrderShade = Color.fromARGB(112, 243, 157, 25);
 const greenShade = Color(0xFF00B200);
+const greenLightShade = Color(0xFF00B200);
+const greenDarkShade = Color(0xFF32B863);
